@@ -11,7 +11,7 @@ RUN apt-get update && rm -rf /var/lib/apt/lists/*
 # Grab version of Nifi from an Apache mirror
 ENV NIFI_VERSION 0.7.0
 ENV NIFI_TGZ_URL http://www.gtlib.gatech.edu/pub/apache/nifi/$NIFI_VERSION/nifi-$NIFI_VERSION-bin.tar.gz
-RUN wget -O nifi.tar.gz "NIFI_TGZ_URL"
+RUN wget -O nifi.tar.gz "$NIFI_TGZ_URL"
 
 # Extract to workdir
 RUN tar -xvf nifi.tar.gz --strip-components=1
